@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'input_page.dart';
 
 void main() {
   runApp(const BMICalculator());
@@ -12,34 +13,14 @@ class BMICalculator extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.red,
+        colorScheme: ColorScheme.dark(
+          primary: Color.fromARGB(255, 235, 21, 85),
+          surface: Color.fromARGB(255, 10, 13, 34),
+          background: Color.fromARGB(255, 18, 20, 40),
+          surfaceVariant: Color.fromARGB(255, 29, 31, 51),
+        ),
       ),
       home: InputPage(),
-    );
-  }
-}
-
-class InputPage extends StatefulWidget {
-  const InputPage({Key? key}) : super(key: key);
-
-  @override
-  State<InputPage> createState() => _InputPageState();
-}
-
-class _InputPageState extends State<InputPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("BMI CALCULATOR"),
-      ),
-      body: Center(
-        child: Text("Body Text"),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {},
-      ),
     );
   }
 }
