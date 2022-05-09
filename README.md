@@ -1,16 +1,13 @@
-# bmi_calculator
+# BMI Calculator
 
 Body Mass Index calculator
 
-## Getting Started
+## What can this app do?
 
-This project is a starting point for a Flutter application.
+This multi-screen application with a custom widget design calculates 
+the body mass index according to the parameters entered by the user.
 
-A few resources to get you started if this is your first Flutter project:
+Это мультиэкранное приложение с нестандартным дизайном виджетов рассчитывает 
+индекс массы тела по введённым пользователем параметрам.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![](images/Screenshot.png)

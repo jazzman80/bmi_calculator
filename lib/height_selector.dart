@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'custom_card.dart';
 
 class HeightSelector extends StatefulWidget {
-  const HeightSelector({Key? key}) : super(key: key);
+  HeightSelector({Key? key}) : super(key: key);
+
+  int _height = 180;
+  int getHeight() => _height;
 
   @override
   State<HeightSelector> createState() => _HeightSelectorState();
 }
 
 class _HeightSelectorState extends State<HeightSelector> {
-  int _height = 180;
-
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -21,7 +22,7 @@ class _HeightSelectorState extends State<HeightSelector> {
           children: [
             Text(
               'HEIGHT',
-              style: Theme.of(context).textTheme.labelMedium,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -29,20 +30,20 @@ class _HeightSelectorState extends State<HeightSelector> {
               textBaseline: TextBaseline.alphabetic,
               children: [
                 Text(
-                  _height.toString(),
-                  style: Theme.of(context).textTheme.labelLarge,
+                  widget._height.toString(),
+                  style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 Text(
                   'cm',
-                  style: Theme.of(context).textTheme.labelMedium,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ],
             ),
             Slider(
-              value: _height.toDouble(),
+              value: widget._height.toDouble(),
               onChanged: (double newHeight) {
                 setState(() {
-                  _height = newHeight.toInt();
+                  widget._height = newHeight.toInt();
                 });
               },
               min: 120,

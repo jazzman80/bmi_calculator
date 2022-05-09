@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'gender_selector.dart';
-import 'height_selector.dart';
-import 'weight_age_selector.dart';
+import 'input_page.dart';
 
 void main() {
   runApp(const BMICalculator());
@@ -15,51 +13,32 @@ class BMICalculator extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.light(
+        colorScheme: const ColorScheme.light(
           primary: Color.fromARGB(255, 9, 13, 34),
           secondary: Color.fromARGB(255, 234, 20, 86),
+          onSecondary: Colors.white,
           tertiary: Color.fromARGB(255, 50, 50, 70),
           surfaceVariant: Color.fromARGB(255, 18, 20, 40),
           surface: Color.fromARGB(255, 30, 31, 50),
           onSurface: Colors.white,
           onSurfaceVariant: Colors.white,
         ),
-        textTheme: TextTheme(
-          labelLarge: TextStyle(
-            fontSize: 60.0,
-            color: Colors.white,
-          ),
-          labelMedium: TextStyle(
-            fontSize: 20.0,
-            color: Colors.white,
-          ),
-        ),
+        textTheme: Typography.whiteMountainView,
         sliderTheme: SliderThemeData(
-          thumbColor: Color.fromARGB(255, 234, 20, 86),
+          thumbColor: const Color.fromARGB(255, 234, 20, 86),
           activeTrackColor: Colors.white,
-          overlayColor: Color.fromARGB(50, 234, 20, 86),
+          overlayColor: const Color.fromARGB(50, 234, 20, 86),
           inactiveTrackColor: Colors.grey[700],
-          thumbShape: RoundSliderThumbShape(
+          thumbShape: const RoundSliderThumbShape(
             enabledThumbRadius: 15.0,
           ),
-          overlayShape: RoundSliderOverlayShape(
+          overlayShape: const RoundSliderOverlayShape(
             overlayRadius: 30.0,
           ),
         ),
-        scaffoldBackgroundColor: Color.fromARGB(255, 9, 13, 34),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 9, 13, 34),
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('BMI Calculator'),
-        ),
-        body: Column(
-          children: [
-            GenderSelector(),
-            HeightSelector(),
-            WeightAgeSelector(),
-          ],
-        ),
-      ),
+      home: InputPage(),
     );
   }
 }

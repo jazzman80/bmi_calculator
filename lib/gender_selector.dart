@@ -63,13 +63,13 @@ class GenderCard extends StatelessWidget {
   final String title;
   final IconData? icon;
   final Color? color;
-  final Function onTap;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
-        onTap: () => onTap(),
+        onTap: onTap,
         child: CustomCard(
           color: color,
           child: Column(
@@ -82,7 +82,7 @@ class GenderCard extends StatelessWidget {
               ),
               Text(
                 title,
-                style: Theme.of(context).textTheme.labelMedium,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
             ],
           ),

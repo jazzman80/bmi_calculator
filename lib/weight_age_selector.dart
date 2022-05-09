@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'custom_card.dart';
 
 class WeightAgeSelector extends StatelessWidget {
-  WeightAgeSelector({Key? key}) : super(key: key);
+  const WeightAgeSelector({Key? key}) : super(key: key);
 
-  int _weight = 60;
-  int _age = 30;
+  final int _weight = 60;
+  final int _age = 30;
+
+  int getWeight() => _weight;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class ButtonCard extends StatefulWidget {
   ButtonCard({Key? key, required this.title, required this.value})
       : super(key: key);
 
-  String title;
+  final String title;
   int value;
 
   @override
@@ -60,21 +62,21 @@ class _ButtonCardState extends State<ButtonCard> {
           children: [
             Text(
               widget.title,
-              style: Theme.of(context).textTheme.labelMedium,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             Text(
               widget.value.toString(),
-              style: Theme.of(context).textTheme.labelLarge,
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 RoundButton(
+                  action: removeValue,
                   icon: Icons.remove,
-                  action: () => removeValue(),
                 ),
                 RoundButton(
-                  action: () => addValue(),
+                  action: addValue,
                   icon: Icons.add,
                 ),
               ],
@@ -91,17 +93,18 @@ class RoundButton extends StatelessWidget {
       : super(key: key);
 
   final IconData? icon;
-  final Function action;
+  final VoidCallback action;
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: () => action(),
+      onPressed: action,
       child: Icon(
         icon,
+        size: 40.0,
         color: Colors.white,
       ),
-      shape: CircleBorder(),
+      shape: const CircleBorder(),
       minWidth: 0.0,
       elevation: 0.0,
       color: Theme.of(context).colorScheme.tertiary,
