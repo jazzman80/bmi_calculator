@@ -1,5 +1,5 @@
-name: quizzler
-description: Quizzler app
+name: bmi_calculator
+description: Body Mass Index calculator
 
 publish_to: 'none'
 
